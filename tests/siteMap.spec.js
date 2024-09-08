@@ -1,5 +1,4 @@
 const { test, expect, describe } = require('@playwright/test');
-const { describe } = require('node:test');
 const { WEBSITE_HOME, APP_NAME } = require('./config');
 
 describe('Sitemap', () => {
@@ -12,10 +11,11 @@ describe('Sitemap', () => {
         await expect(page).toHaveURL(WEBSITE_HOME);
     })
 
-    // TODO: add the use of geolocation
-    test('should have a details page', async ({ page }) => {
+    // TODO: add the use of geolocation to work
+    test('should have a dashboard page', async ({ page }) => {
         await page.getByRole('link', { name: 'docs' }).click();
-        await expect(page).toHaveURL(`${WEBSITE_HOME}/docs/intro`);
+
+        await expect(page).toHaveURL(`${WEBSITE_HOME}/dashboard`);
     })
 
     test('should have the app title', async ({ page }) => {

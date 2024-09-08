@@ -1,9 +1,6 @@
 // test the dark mode
 // responsiveness
-
 const { test, expect, describe } = require('@playwright/test');
-const { describe } = require('node:test');
-
 const { DATA_FOLDER, WEBSITE_HOME } = require('./config');
 
 
